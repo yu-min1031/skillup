@@ -1,0 +1,45 @@
+/*=====　5-2-6 3本線が回転して×に====*/
+.openbtn{
+    position:relative;
+    background: #DBB82E;
+    cursor:pointer;
+    width:150px;
+    height:150px;
+}
+/*ボタン内側*/
+.openbtn span{
+    display:inline-block;
+    transition:all .4s;/*アニメーションの設定*/
+    position:absolute;
+    left:24px;
+    height:13px;
+    background:#fff;
+}
+.openbtn span:nth-of-type(1) {
+	top:40px;	
+  	width: 65%;
+}
+.openbtn span:nth-of-type(2) {
+	top:70px;
+  	width: 55%;
+}
+.openbtn span:nth-of-type(3) {
+	top:100px;
+  	width: 45%;
+}
+/*activeクラスが付与されると線が回転して×になる*/
+.openbtn.active span:nth-of-type(1){
+    top:48px;
+    left:38px;
+    transform:translateY(6px)rotate(-135deg);
+    width:50%;
+}
+.openbtn.active span:nth-of-type(2){
+    opacity:0;
+}
+.openbtn.active span:nth-of-type(3){
+    top:60px;
+    left:38px;
+    transform: translateY(-6px)rotate(135deg);
+    width: 50%;
+}

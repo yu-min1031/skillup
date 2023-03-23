@@ -1,0 +1,69 @@
+@charset "utf-8";
+/*========= レイアウトのためのCSS ===============*/
+
+#container{
+    width:100%;
+    height: 100vh;
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+a{
+    color: #333;
+}
+
+a:hover{
+    text-decoration: none;   
+}
+/*===Loading背景画面設定===*/
+/*Loading背景画面設定*/
+#splash{
+    /*fixedで全面に固定*/
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:999;
+    background: #fff;
+    text-align:center;
+    color:#fff;
+}
+
+/*Loading画像中央位置*/
+#splash_logo{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+/*Loadingアイコンの大きさの設定*/
+#splash_logo img{
+    width:1000px;
+}
+
+/*fadeUpするアイコンの動き*/
+.fadeUp{
+    /*アニメーションの種類他にslideやbounceがある*/
+    animation-name:fadeUpAnime;
+    /*１回のアニメーションにかかる時間*/
+    animation-duration:0.5s;
+    /*アニメーション実行前後にどう対象にスタイルを適用するか他にはbackwardsやbothなど*/
+    animation-fill-mode:forwards;
+    /*要素の不透明度を設定*/
+    opacity:0;
+}
+
+@keyframes fadeUpAnime{
+    from{
+        opacity:0;
+        transform:translateY(100px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
